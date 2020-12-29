@@ -8,25 +8,14 @@ julia:
   - nightly
 os:
   - linux
-  - osx
-  - windows
 arch:
-  - x64
-  - x86
+  - amd64
   - arm64
+  - arm64-graviton2
 jobs:
   fast_finish: true
   allow_failures:
     - julia: nightly
-  exclude:
-    - arch: x86
-      os: osx
-    - arch: arm64
-      os: osx
-    - arch: arm64
-      os: windows
-    - arch: arm64
-      julia: nightly
   include:
     - stage: Documentation
       julia: 1.0
